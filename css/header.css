@@ -1,16 +1,27 @@
+.header {
+    position: relative;
+    height: 100svh;
+    max-height: 940px;
+    display: flex;
+    flex-direction: column;
+}
+
 .header__top {
-    background: rgba(1, 3, 5, 0.80);
+    background: linear-gradient(90.09deg, #3800AF 0%, #BF7204 97.52%, #C27500 100%, #C27500 100%);
     padding: 20px 15px;
     display: flex;
     gap: 25px;
     align-items: flex-end;
     justify-content: center;
+    flex: 0 0 auto;
 }
-.header__top-icon{
+
+.header__top-icon {
     font-size: 50px;
     color: white;
 }
-.header__top-text{
+
+.header__top-text {
     max-width: 166px;
     width: 100%;
     height: 33px;
@@ -19,36 +30,44 @@
     line-height: 18px;
 }
 
-.header__nav{
+.header__nav {
+    position: sticky;
     padding: 30px 0;
     background: #010305CC;
+    flex: 0 0 auto;
 }
-.header__wrap{
+
+.header__wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.header__nav-logo{
+
+.header__nav-logo {
     display: flex;
     align-items: flex-end;
     gap: 5px;
 }
-.header__nav-logo-img{
+
+.header__nav-logo-img {
     width: 104px;
     height: 42px;
 }
-.header__nav-logo-sapn{
+
+.header__nav-logo-span {
     font-family: var(--CB);
     font-size: 18px;
     font-weight: 700;
     line-height: 20px;
     color: white;
 }
-.header__nav-list{
+
+.header__nav-list {
     display: flex;
     align-items: center;
 }
-.heder__nav-list-item-link{
+
+.header__nav-list-link {
     font-family: var(--MR);
     font-size: 14px;
     font-weight: 400;
@@ -58,11 +77,12 @@
     transition: 0.3s;
     position: relative;
 }
-.heder__nav-list-item-link:hover{
+
+.header__nav-list-link:hover {
     color: var(--lightorange);
 }
 
-.heder__nav-list-item-link:after{
+.header__nav-list-link:after {
     content: '';
     position: absolute;
     left: 50%;
@@ -73,6 +93,24 @@
     border-radius: 20px 20px 0 0;
     background: var(--lightoreng);
 }
-.heder__nav-list-item-link:hover::after{
+
+.header__nav-list-item-link:hover::after {
     width: 100%;
+}
+@media screen and (max-width: 768px) {
+    .header__wrap{
+        flex-direction: column;
+        gap: 30px;
+    }
+    .header__nav-list-link{
+        padding: 30px 15px;
+    }
+}
+@media screen and (max-width: 420px){
+    .header__nav-list-link{
+        padding: 30px 0;
+    }
+    .header__nav-list{
+        gap: 15px;
+    }
 }
